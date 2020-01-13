@@ -27,6 +27,7 @@ Hind: <?php echo $book['price'];?><br>
 Lao seis: <?php echo $book['stock_saldo'];?><br>
 Lehekülgede arv <?php echo $book['pages'];?><br>
 Tüüp: <?php echo $book['type'];?><br>
+<a href="Delete">
 </body>
 </html>
 
