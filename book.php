@@ -28,6 +28,7 @@ Lao seis: <?php echo $book['stock_saldo'];?><br>
 Lehekülgede arv <?php echo $book['pages'];?><br>
 Tüüp: <?php echo $book['type'];?><br>
 <a href="delete.php?id=<?php echo $id?>">DELETE</a>
+<a href="edit.php?id=<?php echo $id?>">EDIT</a>
 </body>
 </html>
 
