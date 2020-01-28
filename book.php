@@ -3,7 +3,7 @@ require_once 'db_connection.php';
 
 $id = $_GET['id'];
 
-$stmt = $pdo->prepare('SELECT * FROM books WHERE id = :id');
+$stmt = $pdo->prepare('SELECT * FROM books b LEFT JOIN book_authors ba ON ba.book_id=b.id LEFT JOIN authors a ON ba.author_id=a.id  WHERE b.id = :id ');
 $stmt->execute(['id' => $id]);
 $book =$stmt->fetch();
 ?>
@@ -27,6 +27,7 @@ Hind: <?php echo $book['price'];?><br>
 Lao seis: <?php echo $book['stock_saldo'];?><br>
 Lehekülgede arv <?php echo $book['pages'];?><br>
 Tüüp: <?php echo $book['type'];?><br>
+Autor: <?php echo $book['first_name'];?><br>
 <a href="delete.php?id=<?php echo $id?>">DELETE</a>
 <a href="edit.php?id=<?php echo $id?>">EDIT</a>
 </body>
