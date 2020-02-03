@@ -27,9 +27,10 @@ Hind: <?php echo $book['price'];?><br>
 Lao seis: <?php echo $book['stock_saldo'];?><br>
 Lehekülgede arv <?php echo $book['pages'];?><br>
 Tüüp: <?php echo $book['type'];?><br>
-Autor: <?php echo $book['first_name'];?><br>
+Autor: <?php echo $book['first_name'];?> <?php echo $book['last_name'];?><br>
 <a href="delete.php?id=<?php echo $id?>">DELETE</a>
 <a href="edit.php?id=<?php echo $id?>">EDIT</a>
+<a href="authors.php?id><?php echo $id?>">AUTHORS</a>
 </body>
 </html>
 
