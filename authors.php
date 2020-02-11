@@ -18,10 +18,10 @@ try {
 
 //var_dump($_GET);
 
-$first_name = $_GET['first_name'];
+$title = $_GET['title'];
 $year = $_GET['year'];
-$stmt = $pdo->prepare('SELECT * FROM first_name WHERE first_name LIKE :first_name AND release_date LIKE :year');
-$stmt->execute(['title' => '%' . $title . '%', 'year' => '%' . $year . '%']);
+$stmt = $pdo->prepare('SELECT * FROM authors');
+$stmt->execute();
 ?>
 
 <!DOCTYPE html>
@@ -47,9 +47,8 @@ $stmt->execute(['title' => '%' . $title . '%', 'year' => '%' . $year . '%']);
      <ul>
 
 <?php
-echo '<ul>';
 while ( $row =$stmt->fetch() ) {
-     echo '<li><a href="./book.php?id=' . $row['id'] . '">' . $row['title'] . '</a></li>';
+     echo '<li>' . $row['first_name'] . ' ' . $row['last_name'] . '</li>';
 }
 ?>
 
